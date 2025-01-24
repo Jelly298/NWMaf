@@ -93,11 +93,7 @@ public class BPSTracker implements IFeature {
     }
 
     private boolean checkForBPS(AbstractMacro.State currentState) {
-        return currentState != AbstractMacro.State.NONE &&
-                currentState != AbstractMacro.State.DROPPING &&
-                currentState != AbstractMacro.State.SWITCHING_SIDE &&
-                currentState != AbstractMacro.State.SWITCHING_LANE &&
-                Minecraft.getMinecraft().currentScreen == null;
+        return currentState.ordinal() > 3 && Minecraft.getMinecraft().currentScreen == null;
     }
 
     public float elapsedTime = 0;

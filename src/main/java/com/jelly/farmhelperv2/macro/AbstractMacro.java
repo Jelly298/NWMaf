@@ -7,6 +7,8 @@ import com.jelly.farmhelperv2.failsafe.FailsafeManager;
 import com.jelly.farmhelperv2.feature.FeatureManager;
 import com.jelly.farmhelperv2.feature.impl.DesyncChecker;
 import com.jelly.farmhelperv2.feature.impl.LagDetector;
+import com.jelly.farmhelperv2.feature.impl.PestFarmer;
+import com.jelly.farmhelperv2.feature.impl.PestsDestroyer;
 import com.jelly.farmhelperv2.handler.GameStateHandler;
 import com.jelly.farmhelperv2.handler.MacroHandler;
 import com.jelly.farmhelperv2.handler.RotationHandler;
@@ -147,6 +149,13 @@ public abstract class AbstractMacro {
             }
             checkOnSpawnClock.schedule(5000);
         }
+
+        if (FarmHelperConfig.pestForceEnable && PestsDestroyer.getInstance().canEnableMacro()) {
+            PestsDestroyer.getInstance().start();
+            LogUtils.sendDebug("Activating Pests Destroyer");
+            return;
+        }
+
         if (mc.thePlayer.getPosition().getY() < 0) {
             LogUtils.sendError("Build a wall between the rewarp point and the void to prevent falling out of the garden! Disabling the macro...");
             MacroHandler.getInstance().disableMacro();
@@ -226,7 +235,9 @@ public abstract class AbstractMacro {
             return;
         }
 
-        PlayerUtils.getTool();
+        if (!PestFarmer.instance.holdDaedalus()) {
+            PlayerUtils.getTool();
+        }
 
         // Update or invoke state, based on if player is moving or not
         if (GameStateHandler.getInstance().canChangeDirection()) {
@@ -382,14 +393,15 @@ public abstract class AbstractMacro {
 
     public enum State {
         // Add default values like NONE and DROPPING
+        // DO NOT REARRAGE, IT WILL BREAK PEST FARMER IF YOU DO - osama
         NONE,
         DROPPING,
+        SWITCHING_SIDE,
+        SWITCHING_LANE,
         LEFT,
         RIGHT,
         BACKWARD,
         FORWARD,
-        SWITCHING_SIDE,
-        SWITCHING_LANE,
 
         A,
         D,
