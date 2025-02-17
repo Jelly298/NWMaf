@@ -66,7 +66,7 @@ public class PlayerUtils {
                         if (MacroHandler.getInstance().getCurrentMacro().isPresent()) {
                             yaw = MacroHandler.getInstance().getCurrentMacro().get().getClosest90Deg().orElse(AngleUtils.getClosest());
                         } else {
-                            if (FarmHelperConfig.getMacro() == FarmHelperConfig.MacroEnum.S_MUSHROOM || FarmHelperConfig.getMacro() == FarmHelperConfig.MacroEnum.S_SUGAR_CANE) {
+                            if (FarmHelperConfig.getMacro() == FarmHelperConfig.MacroEnum.S_MUSHROOM || FarmHelperConfig.getMacro() == FarmHelperConfig.MacroEnum.S_SUGAR_CANE || FarmHelperConfig.getMacro() == FarmHelperConfig.MacroEnum.S_SUGAR_CANE_MELONKINGDE) {
                                 yaw = AngleUtils.getClosestDiagonal();
                             } else {
                                 yaw = AngleUtils.getClosest();

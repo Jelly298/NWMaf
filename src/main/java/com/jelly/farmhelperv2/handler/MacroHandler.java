@@ -97,6 +97,8 @@ public class MacroHandler {
                 return Macros.S_SHAPE_MELON_PUMPKIN_DEFAULT_MACRO.getMacro();
             case S_SUGAR_CANE:
                 return Macros.S_SHAPE_SUGARCANE_MACRO.getMacro();
+            case S_SUGAR_CANE_MELONKINGDE:
+                return Macros.S_SHAPE_SUGARCANE_MELONKINGDE_MACRO.getMacro();
             case S_COCOA_BEANS:
             case S_COCOA_BEANS_TRAPDOORS:
                 return Macros.S_SHAPE_COCOA_BEAN_MACRO.getMacro();
@@ -542,6 +544,7 @@ public class MacroHandler {
         S_SHAPE_MUSHROOM_MACRO(SShapeMushroomMacro.class),
         S_SHAPE_COCOA_BEAN_MACRO(SShapeCocoaBeanMacro.class),
         S_SHAPE_SUGARCANE_MACRO(SShapeSugarcaneMacro.class),
+        S_SHAPE_SUGARCANE_MELONKINGDE_MACRO(SShapeSugarcaneMelonkingdeMacro.class),
         S_SHAPE_VERTICAL_CROP_MACRO(SShapeVerticalCropMacro.class),
         S_SHAPE_MELON_PUMPKIN_DEFAULT_MACRO(SShapeMelonPumpkinDefaultMacro.class),
         S_SHAPE_MUSHROOM_SDS(SShapeMushroomSDSMacro.class),

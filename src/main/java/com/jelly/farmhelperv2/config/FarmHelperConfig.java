@@ -94,15 +94,16 @@ public class FarmHelperConfig extends Config {
                     "S Shape - Pumpkin/Melon Melongkingde", // 2
                     "S Shape - Pumpkin/Melon Default Plot", // 3
                     "S Shape - Sugar Cane", // 4
-                    "S Shape - Cactus", // 5
-                    "S Shape - Cactus SunTzu Black Cat", // 6
-                    "S Shape - Cocoa Beans", // 7
-                    "S Shape - Cocoa Beans (With Trapdoors)", // 8
-                    "S Shape - Cocoa Beans (Left/Right)", // 9
-                    "S Shape - Mushroom (45°)", // 10
-                    "S Shape - Mushroom (30° with rotations)", // 11
-                    "S Shape - Mushroom SDS", // 12
-                    "Circle - Crops (Wheat, Carrot, Potato, NW)" // 13
+                    "S Shape - Sugar Cane Melonkingde", // 5
+                    "S Shape - Cactus", // 6
+                    "S Shape - Cactus SunTzu Black Cat", // 7
+                    "S Shape - Cocoa Beans", // 8
+                    "S Shape - Cocoa Beans (With Trapdoors)", // 9
+                    "S Shape - Cocoa Beans (Left/Right)", // 10
+                    "S Shape - Mushroom (45°)", // 11
+                    "S Shape - Mushroom (30° with rotations)", // 12
+                    "S Shape - Mushroom SDS", // 13
+                    "Circle - Crops (Wheat, Carrot, Potato, NW)" // 14
             }, size = 2
     )
     public static int macroType = 0;
@@ -2566,6 +2567,7 @@ public class FarmHelperConfig extends Config {
         S_PUMPKIN_MELON_MELONGKINGDE,
         S_PUMPKIN_MELON_DEFAULT_PLOT,
         S_SUGAR_CANE,
+        S_SUGAR_CANE_MELONKINGDE,
         S_CACTUS,
         S_CACTUS_SUNTZU,
         S_COCOA_BEANS,
